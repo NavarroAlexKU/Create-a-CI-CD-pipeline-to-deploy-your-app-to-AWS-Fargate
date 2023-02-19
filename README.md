@@ -13,5 +13,19 @@
 ### AWS Cloud9:
 * Open new terminal and check files we will push to AWS CodeCommit:
 ```
+Executing the above command in the terminal displays the following files:
+- Dockerfile
+- index.js
+- package.json
+- routes
+- static
 ls ~/environment
+```
+
+```
+******************************
+**** This is OUTPUT ONLY. ****
+******************************
+
+Dockerfile  index.js  package.json  routes  static
 ```
