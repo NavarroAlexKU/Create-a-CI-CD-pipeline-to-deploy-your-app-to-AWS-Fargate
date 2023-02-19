@@ -30,3 +30,8 @@ Executing the above command in the terminal displays the following files:
 
 Dockerfile  index.js  package.json  routes  static
 ```
+
+* You can view the contents of the Dockerfile by executing the following command in the terminal:
+```
+cat Dockerfile
+```
