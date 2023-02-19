@@ -7,3 +7,5 @@
 
 ## Configure AWS CodeCommit:
 ![ScreenShot](https://d1.awsstatic.com/products/codecommit/Product-Page-Diagram_AWS-CodeCommit%20(1)2.b33016d587d4c7aa6f132753294929982e2648b4.png)
+* Create configuration and specification files that define the code pipeline and a new task definition.
+* Edit the source code to change the application's background color and save everything to a CodeCommit repository.
