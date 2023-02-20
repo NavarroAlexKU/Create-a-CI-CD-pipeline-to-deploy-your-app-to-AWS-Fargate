@@ -231,4 +231,6 @@ Create Deployment Group:
     - Choose Production Listener Port
     - Choose Target group 1 name
     - Choose Target group 2 name
-    - Choose create deployment:
+    - Choose create deployment
+
+![ScreenShot](https://github.com/NavarroAlexKU/Create-a-CI-CD-pipeline-to-deploy-your-app-to-AWS-Fargate/blob/main/Screenshot%202023-02-20%20at%2010.41.49%20AM.png)
