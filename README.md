@@ -120,6 +120,7 @@ Resources:
 EOF
 ```
 
+Create taskdef.json file:
 ```
 cat << EOF > ~/environment/taskdef.json
 {
