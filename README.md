@@ -234,3 +234,11 @@ Create Deployment Group:
     - Choose create deployment
 
 ![ScreenShot](https://github.com/NavarroAlexKU/Create-a-CI-CD-pipeline-to-deploy-your-app-to-AWS-Fargate/blob/main/Screenshot%202023-02-20%20at%2010.41.49%20AM.png)
+
+### Build the CI/CD Pipeline:
+* AWS CodePipeline Console:
+    - Enter Pipeline name
+    - Service role = Existing service role
+    - Expand Advanced Settings:
+    - Choose Custom Location
+    
