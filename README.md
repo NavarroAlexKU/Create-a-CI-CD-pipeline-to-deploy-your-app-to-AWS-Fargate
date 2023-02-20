@@ -206,6 +206,7 @@ git push --set-upstream $SRC_REPO_URL main
 
 ### Create a CodeDeploy application and deployment group:
 ![ScreenShot](https://docs.aws.amazon.com/images/codedeploy/latest/userguide/images/deployment-process-ecs.png)
+
 AWS CodeDeploy Documentation: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-steps-ecs.html
 * Application:
     - An application is a name that uniquely identifies the code that you want to deploy. AWS CodeDeploy uses the application to ensure that the correct combination of revision, deployment configuration, instances, and Auto Scaling Groups are referenced when the pipeline is invoked.
