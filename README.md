@@ -80,3 +80,9 @@ artifacts:
       - taskdef.json
 EOF
 ```
+
+Looking at the code above:
+* Version 0.2 is referencing the Buildspec version I'm using.
+* pre_build phase is optional phase that is used to run commands before building the application code. For this specific example, the pre_build phase is used to set variables that are used throughout the bill process and authenticate into Amazon ECR.
+* Each newly built image is tagged with the corresponding "commit ID" from AWS CodeCommit.
+* The commands includeed in the build phase are ran sequentially. "ABORT" command has been included to end the build if any of the commands fail.
