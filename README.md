@@ -240,4 +240,6 @@ Create Deployment Group:
 * AWS CodePipeline Console:
     - Use the following link to follow steps on creating a codepipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-create.html
     1.) Create and name your pipeline:
+    ![ScreenShot](https://github.com/NavarroAlexKU/Create-a-CI-CD-pipeline-to-deploy-your-app-to-AWS-Fargate/blob/main/Screenshot%202023-02-20%20at%2011.02.25%20AM.png)
+    
     2.) Create a source stage:
