@@ -37,10 +37,24 @@ cat Dockerfile
 ```
 
 To launch this application on Amazon ECS and build a pipeline that automates its deployment: we need three additional files:
- - buildspec.yaml: CodeBuild uses the commands and parameters in the buildspec file to build a Docker image.
+ - buildspec.yaml: CodeBuild uses the commands and parameters in the buildspec file to build a Docker image. "You must have a buildspec.yml file at the root of your source code"
  - appspec.yaml: CodeDeploy uses the appspec file to select a task definition.
  - taskdef.json: After updating the application source code and building a new container, we need a second task definition that points to it. The taskdef.json file is used to create this new task definition that points to our updated application image.
  
+Breakdown of buildspec.yaml file:
+* You can define environment varianbles:
+    - Plaintext variables
+    - Secure secretrs using the SSM Parameter Store.
+* Phases:
+    - Install: install dependencies you may need for the build.
+    - Pre-build: final commands to execute before build.
+    - Build: Actual build commands
+    - Post Build: Finishing touches (e.g. zip file output).
+* Artifacts:
+    - These get uploaded to Amazon S3 storage (encrypted with KMS).
+* Cache: files to cache (usually dependencies) to Amazon S3 storage for future builds.
+
+
  ```
  cat << 'EOF' > ~/environment/buildspec.yaml
 version: 0.2
