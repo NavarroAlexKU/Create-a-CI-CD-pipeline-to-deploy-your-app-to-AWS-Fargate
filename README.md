@@ -186,5 +186,28 @@ export SRC_REPO_URL=$( \
 echo "Repo successfully created. Use $SRC_REPO_URL to clone the repository"
 ```
 
+Now Update Git configuration:
+```
+git config --global init.defaultBranch main
+```
+
+Initialize the envronment directory as a local Git repo:
+```
+cd ~/environment
+git init
+```
+
+Stage the application files, commit theupdated files to the local repo, and push the application code to themain branch in AWS CodeCommit repo:
+```
+git add .
+git commit -m "initial commit"
+git push --set-upstream $SRC_REPO_URL main
+```
+
+### Create a CodeDeploy application and deployment group:
+* Application:
+    - An application is a name that uniquely identifies the code that you want to deploy. AWS CodeDeploy uses the application to ensure that the correct combination of revision, deployment configuration, instances, and Auto Scaling Groups are referenced when the pipeline is invoked.
+* Deployment Groups:
+    - AWS CodeDeploy uses deployment groups to specify the Amazon ECS service, load balancer, and target groups for your revised application code. They also include configuration details, such as how and when traffic should be rerouted to the new tasks that your pipeline creates.
 
 
