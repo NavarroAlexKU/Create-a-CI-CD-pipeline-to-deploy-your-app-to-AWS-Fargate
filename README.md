@@ -248,3 +248,5 @@ Create Deployment Group:
 
     3.) Create a build stage:
     ![ScreenShot](https://github.com/NavarroAlexKU/Create-a-CI-CD-pipeline-to-deploy-your-app-to-AWS-Fargate/blob/main/Screenshot%202023-02-20%20at%2011.12.28%20AM.png)
+
+    4.) Create deployment stage:
