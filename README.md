@@ -210,4 +210,10 @@ git push --set-upstream $SRC_REPO_URL main
 * Deployment Groups:
     - AWS CodeDeploy uses deployment groups to specify the Amazon ECS service, load balancer, and target groups for your revised application code. They also include configuration details, such as how and when traffic should be rerouted to the new tasks that your pipeline creates.
 
+Create Application:
+* AWS CodeDeploy console:
+    - Go to Developer Tools left side of screen:
+    - Deploy
+    - CodeDeploy and choose Applications
+
 
