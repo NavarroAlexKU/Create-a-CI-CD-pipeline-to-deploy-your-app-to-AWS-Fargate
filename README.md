@@ -218,5 +218,5 @@ Create Application:
     - Go to Developer Tools left side of screen:
     - Deploy
     - CodeDeploy and choose Applications
-
-
+    
+![ScreenShot](https://github.com/NavarroAlexKU/Create-a-CI-CD-pipeline-to-deploy-your-app-to-AWS-Fargate/blob/main/Screenshot%202023-02-20%20at%2010.30.28%20AM.png)
