@@ -218,5 +218,17 @@ Create Application:
     - Go to Developer Tools left side of screen:
     - Deploy
     - CodeDeploy and choose Applications
-    
+
 ![ScreenShot](https://github.com/NavarroAlexKU/Create-a-CI-CD-pipeline-to-deploy-your-app-to-AWS-Fargate/blob/main/Screenshot%202023-02-20%20at%2010.30.28%20AM.png)
+
+Create Deployment Group:
+* AWS CodeDeploy Console:
+    - Choose "Create deployment group"
+    - enter Deployment group name
+    - Choose ServiceRole "Service roles are used to grant permissions to an AWS Service so it can access AWS resources"
+    - Choose Environment configuration
+    - Choose Load balancer already created.
+    - Choose Production Listener Port
+    - Choose Target group 1 name
+    - Choose Target group 2 name
+    - Choose create deployment:
