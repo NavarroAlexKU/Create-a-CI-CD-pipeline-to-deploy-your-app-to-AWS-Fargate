@@ -83,6 +83,25 @@ EOF
 
 Looking at the code above:
 * Version 0.2 is referencing the Buildspec version I'm using.
-* pre_build phase is optional phase that is used to run commands before building the application code. For this specific example, the pre_build phase is used to set variables that are used throughout the bill process and authenticate into Amazon ECR.
+* pre_build phase is optional phase that is used to run commands before building the application code. For this specific example, the pre_build phase is used to set variables that are used throughout the build process and authenticate into Amazon ECR.
 * Each newly built image is tagged with the corresponding "commit ID" from AWS CodeCommit.
-* The commands includeed in the build phase are ran sequentially. "ABORT" command has been included to end the build if any of the commands fail.
+* The commands included in the build phase are ran sequentially. "ABORT" command has been included to end the build if any of the commands fail.
+* post_build phase pushes the Docker image produced in the build phase to Amazon ECR.
+* Upon completion, the build process artifacts called "imageDetail.json" and "imagedefinitions.json", both of which are saved to the env root directory. These files are used in the deploy phase of the code pipeline and indicate which image to deploy to Amazon ECS.
+* The artifacts sections specifies that the appspec.yaml and taskdef.json files uploaded to your CodeCommit repo be included as build outputs. Without these files, the deployment will fail.
+
+Create appspec.yaml file:
+```
+cat << EOF > ~/environment/appspec.yaml
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: <TASK_DEFINITION>
+        LoadBalancerInfo:
+          ContainerName: "application"
+          ContainerPort: 80
+EOF
+```
+
