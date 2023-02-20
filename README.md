@@ -239,6 +239,7 @@ Create Deployment Group:
 ![ScreenShot](https://d1.awsstatic.com/products/codepipeline/Product-Page-Diagram_AWS-CodePipeline.4a1bea38d3c8d3b2c1384dd0a7d2a858f4350471.jpg)
 * AWS CodePipeline Console:
     - Use the following link to follow steps on creating a codepipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-create.html
+    
     1.) Create and name your pipeline:
     ![ScreenShot](https://github.com/NavarroAlexKU/Create-a-CI-CD-pipeline-to-deploy-your-app-to-AWS-Fargate/blob/main/Screenshot%202023-02-20%20at%2011.02.25%20AM.png)
     
