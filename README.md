@@ -239,7 +239,5 @@ Create Deployment Group:
 ![ScreenShot](https://d1.awsstatic.com/products/codepipeline/Product-Page-Diagram_AWS-CodePipeline.4a1bea38d3c8d3b2c1384dd0a7d2a858f4350471.jpg)
 * AWS CodePipeline Console:
     - Use the following link to follow steps on creating a codepipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-create.html
-    - Enter Pipeline name
-    - Service role = Existing service role
-    - Expand Advanced Settings:
-    - Choose Custom Location
+    1.) Create and name your pipeline:
+    2.) Create a source stage:
