@@ -104,6 +104,7 @@ Looking at the code above:
 * Upon completion, the build process artifacts called "imageDetail.json" and "imagedefinitions.json", both of which are saved to the env root directory. These files are used in the deploy phase of the code pipeline and indicate which image to deploy to Amazon ECS.
 * The artifacts sections specifies that the appspec.yaml and taskdef.json files uploaded to your CodeCommit repo be included as build outputs. Without these files, the deployment will fail.
 
+### Artifacts Commands:
 Create appspec.yaml file:
 ```
 cat << EOF > ~/environment/appspec.yaml
@@ -118,4 +119,55 @@ Resources:
           ContainerPort: 80
 EOF
 ```
+
+```
+cat << EOF > ~/environment/taskdef.json
+{
+    "containerDefinitions": [
+        {
+            "name": "application",
+            "image": "<IMAGE_NAME>",
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "cicd-logs",
+                    "awslogs-region": "$AWS_REGION",
+                    "awslogs-stream-prefix": "ecs"
+                },
+            },
+        }
+    ],
+    "family": "$FAMILY",
+    "taskRoleArn": "arn:aws:iam::$ACCOUNT_ID:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::$ACCOUNT_ID:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "status": "ACTIVE",
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512",
+    "tags": [
+        {
+            "key": "Name",
+            "value": "GreenTaskDefinition"
+        }
+    ]
+}
+EOF
+```
+
+
 
