@@ -244,3 +244,6 @@ Create Deployment Group:
     ![ScreenShot](https://github.com/NavarroAlexKU/Create-a-CI-CD-pipeline-to-deploy-your-app-to-AWS-Fargate/blob/main/Screenshot%202023-02-20%20at%2011.02.25%20AM.png)
     
     2.) Create a source stage:
+            - I configured CodePipeline to be invoked whenever new code is pushed to my CodeCommit repo
+            - Source Provider = AWS CodeCommit
+            - Choose the repository name I created earlier
