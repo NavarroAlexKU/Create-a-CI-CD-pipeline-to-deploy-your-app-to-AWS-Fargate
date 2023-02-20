@@ -10,7 +10,7 @@
 * Create configuration and specification files that define the code pipeline and a new task definition.
 * Edit the source code to change the application's background color and save everything to a CodeCommit repository.
 
-### AWS Cloud9:
+### Configure CodeCommit as a source control repository:
 * Open new terminal and check files we will push to AWS CodeCommit:
 ```
 ls ~/environment
@@ -168,6 +168,22 @@ cat << EOF > ~/environment/taskdef.json
     ]
 }
 EOF
+```
+The application I'm modifying is a website that currently has a blue background. I'm going to modify the application code to make the background green.
+to change the application background color to green use the following command:
+```
+sed -i 's/282F3D/1D8102/g' ~/environment/static/css/app.css
+```
+
+Now that the application code has been updated, I will create a new AWS CodeCommit repo and push all the files into it.
+```
+export SRC_REPO_URL=$( \
+    aws codecommit create-repository \
+        --repository-name pipeline-source-code \
+        --repository-description "Repository for AWS News application source code" \
+        | jq -r '.[].cloneUrlSsh'
+)
+echo "Repo successfully created. Use $SRC_REPO_URL to clone the repository"
 ```
 
 
