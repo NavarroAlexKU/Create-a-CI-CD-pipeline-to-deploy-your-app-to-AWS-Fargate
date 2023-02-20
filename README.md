@@ -255,4 +255,5 @@ Create Deployment Group:
     5.) Review and Create Pipeline:
 
 We can see our codepipeline has been created and currently running:
+
 ![ScreenShot](https://github.com/NavarroAlexKU/Create-a-CI-CD-pipeline-to-deploy-your-app-to-AWS-Fargate/blob/main/Screenshot%202023-02-20%20at%2011.18.24%20AM.png)
